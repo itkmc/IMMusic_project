@@ -99,54 +99,53 @@ public class UsrPressController {
 		return "usr/press/modify";
 	}
 
-	// 로그인 체크 -> 유무 체크 -> 권한 체크 -> 수정
-//	@RequestMapping("/usr/press/doModify")
-//	@ResponseBody
-//	public String doModify(int id, String title, String body) {
-//		// 로그인 상태 체크 - 인터셉터에서
-//
-//		Press press = pressService.getPress(id); // 해당 게시글 가져오기
-//
-//		// 로그인 정보 가져오기
-////		Rq rq = (Rq) req.getAttribute("rq");
-//
-//		// 로그인 중인 아이디 권한체크(서비스에 요청)
-//		ResultData loginedMemberCanModifyRd = pressService.userCanModify(rq.getLoginedMemberId(), press);
-//
-//		// 글 수정 작업
-//		if (loginedMemberCanModifyRd.isSuccess()) {
-//			pressService.modifyPress(id, title, body);
-//		}
-//		return Ut.jsReplace(loginedMemberCanModifyRd.getResultCode(), loginedMemberCanModifyRd.getMsg(),
-//				"../press/detail?id=" + id);
-//	}
+	@RequestMapping("/usr/press/doModify")
+	@ResponseBody
+	public String doModify(int id, String title, String body) {
+		// 로그인 상태 체크 - 인터셉터에서
 
-//	// 로그인 체크 -> 유무 체크 -> 권한 체크 -> 삭제
-//	@RequestMapping("/usr/press/doDelete")
-//	@ResponseBody
-//	public String doDelete(int id) {
-//		// 로그인 상태 체크 - 인터셉터에서
-//
-//		Press press = pressService.getPress(id);
-//
-//		// 게시글 존재여부 체크
-//		if (press == null) {
-//			return Ut.jsHistoryBack("F-1", Ut.f("%d번 글은 존재하지 않습니다", id));
-//		}
-//
-//		// 로그인 정보 가져오기
-////		Rq rq = (Rq) req.getAttribute("rq");
-//
-//		// 로그인 중인 아이디 권한체크(서비스에 요청)
-//		ResultData loginedMemberCanDeleteRd = pressService.userCanDelete(rq.getLoginedMemberId(), press);
-//
-//		// 글 삭제 작업
-//		if (loginedMemberCanDeleteRd.isSuccess()) {
-//			pressService.deletePress(id);
-//		}
-//		return Ut.jsReplace(loginedMemberCanDeleteRd.getResultCode(), loginedMemberCanDeleteRd.getMsg(),
-//				"../press/list");
-//	}
+		Press press = pressService.getPress(id); // 해당 게시글 가져오기
+
+		// 로그인 정보 가져오기
+//		Rq rq = (Rq) req.getAttribute("rq");
+
+		// 로그인 중인 아이디 권한체크(서비스에 요청)
+		ResultData loginedMemberCanModifyRd = pressService.userCanModify(rq.getLoginedMemberId(), press);
+
+		// 글 수정 작업
+		if (loginedMemberCanModifyRd.isSuccess()) {
+			pressService.modifyPress(id, title, body);
+		}
+		return Ut.jsReplace(loginedMemberCanModifyRd.getResultCode(), loginedMemberCanModifyRd.getMsg(),
+				"../press/detail?id=" + id);
+	}
+
+	// 로그인 체크 -> 유무 체크 -> 권한 체크 -> 삭제
+	@RequestMapping("/usr/press/doDelete")
+	@ResponseBody
+	public String doDelete(int id) {
+		// 로그인 상태 체크 - 인터셉터에서
+
+		Press press = pressService.getPress(id);
+
+		// 게시글 존재여부 체크
+		if (press == null) {
+			return Ut.jsHistoryBack("F-1", Ut.f("%d번 글은 존재하지 않습니다", id));
+		}
+
+		// 로그인 정보 가져오기
+//		Rq rq = (Rq) req.getAttribute("rq");
+
+		// 로그인 중인 아이디 권한체크(서비스에 요청)
+		ResultData loginedMemberCanDeleteRd = pressService.userCanDelete(rq.getLoginedMemberId(), press);
+
+		// 글 삭제 작업
+		if (loginedMemberCanDeleteRd.isSuccess()) {
+			pressService.deletePress(id);
+		}
+		return Ut.jsReplace(loginedMemberCanDeleteRd.getResultCode(), loginedMemberCanDeleteRd.getMsg(),
+				"../press/list");
+	}
 
 	@RequestMapping("/usr/press/write")
 	public String showJoin(Model model) {

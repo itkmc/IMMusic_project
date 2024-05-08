@@ -137,7 +137,7 @@ $(document).ready(function() { //DOM이 준비되지 않음 -> 해결!
 <section>
 		<form action="../press/doWrite" method="POST" onsubmit="PressWrite__submit(this); return false;"
 			enctype="multipart/form-data">
-			<input type="hidden" name=">${currentId }">
+			<input type="hidden" name="${currentId }">
 		<input type="hidden" name="body">
 		<div class="post-container">
 			<div style="display: flex; justify-content: space-between;">

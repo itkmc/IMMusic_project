@@ -93,7 +93,7 @@ public class PressService {
 			return ResultData.from("F-2", Ut.f("%d번 글에 대한 수정 권한이 없습니다", press.getId()));
 		}
 
-		return ResultData.from("S-1", "댓글이 삭제 되었습니다");
+		return ResultData.from("S-1", "글이 삭제 되었습니다");
 	}
 	
 	public int getCurrentPressId() {
