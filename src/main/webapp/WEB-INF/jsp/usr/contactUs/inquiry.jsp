@@ -6,7 +6,9 @@
 
 <style>
 section {
-	margin: 30px 0 200px 0;
+/* 	margin: 30px 0 200px 0; */
+/* 	padding-top: 30px; */
+	padding-bottom: 200px;
 	text-align: center;
 }
 

@@ -28,7 +28,8 @@ section {
 
 .card--2 .card_img, .card--2 .card_img--hover {
 	background-image:
-		url('/resource/원유현.jpg');
+		url('/resource/원유현.jpg'); 
+/* url('https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Download-Image.png'); */
 	background-size: cover; /* Adjusts the background image to cover the entire container */
     background-repeat: no-repeat; /* Ensures the background image is not repeated */
     /* Additional styles */
