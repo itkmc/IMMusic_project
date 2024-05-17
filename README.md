@@ -11,19 +11,28 @@
 <p>
 기간 : 2024.04 ~ 05
 </p>
+<p>
+분담
+  <p>- 원유현 : 서비스 호스트, DB, 유지보수, 전체 디자인, head·foot jspf, top 버튼, artist 페이지</p>
+  <p>- 오효주 : 연주문의, 연주자 가입신청 페이지 구현, 최신 블로그 크롤링, DB, PRESS DETAIL</p>
+  <p>- 강민창 : MAIN, PRESS LIST, PRESS DETAIL 페이지 구현</p>
+  <p>- 신우철 : </p>
+</p>
+
+<br>
 
 ### 개발자 포트폴리오
 <p>
-원유현 : https://ahead-addition-51b.notion.site/7a0c476ab6b844ee92f9c8be01ac1a6c
+- 원유현 : https://ahead-addition-51b.notion.site/7a0c476ab6b844ee92f9c8be01ac1a6c
 </p>
 <p>
-오효주
+- 오효주 :
 </p>
 <p>
-강민창
+- 강민창 : 
 </p>
 <p>
-신우철
+- 신우철 : 
 </p>
 
 <br>
